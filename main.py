@@ -82,7 +82,16 @@
 
 ## 5. Preço total da lista de compras
 
-lista_compras = ["maçã", "banana", "cereja"]
-precos = {"maçã": 0.45, "banana": 0.30, "cereja": 0.65}
-total = sum(precos[item] for item in lista_compras)
-print(f"Preço total: {total}")
+# lista_compras = ["maçã", "banana", "cereja"]
+# precos = {"maçã": 0.45, "banana": 0.30, "cereja": 0.65}
+# total = sum(precos[item] for item in lista_compras)
+# print(f"Preço total: {total}")
+
+## Exercícios intermediários e mais avançados
+## 6. Eliminação de Duplicatas
+## Objetivo: Dada uma lista de emails, remover todos os duplicados.
+
+emails = ["user@example.com", "admin@example.com", "user@example.com", "manager@example.com"]
+emails_unicos = list(set(emails))
+
+print(emails_unicos)
