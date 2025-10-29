@@ -65,6 +65,24 @@
 
 ## 3. Informações de um livro
 
-livro = {"titulo": "1984", "autor": "George Orwell", "ano": 1949}
-for chave, valor in livro.items():
-    print(f"{chave}: {valor}")
+# livro = {"titulo": "1984", "autor": "George Orwell", "ano": 1949}
+# for chave, valor in livro.items():
+#     print(f"{chave}: {valor}")
+
+## 4. Contar ocorrências de caracteres
+
+# def contar_caracteres(s):
+#     contagem = {}
+#     for caractere in s:
+#         contagem[caractere] = contagem.get(caractere, 0) + 1
+    
+#     return contagem
+
+# print(contar_caracteres("engenharia de dados"))
+
+## 5. Preço total da lista de compras
+
+lista_compras = ["maçã", "banana", "cereja"]
+precos = {"maçã": 0.45, "banana": 0.30, "cereja": 0.65}
+total = sum(precos[item] for item in lista_compras)
+print(f"Preço total: {total}")
