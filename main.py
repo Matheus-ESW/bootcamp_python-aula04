@@ -321,26 +321,34 @@
 # palavraInvertida = inverteString(palavra)
 # print(palavraInvertida)
 
-# 18 - Implemente uma função que receba dois argumentos: uma lista de números e um número. A função deve retornar todas as 
+# 19 - Implemente uma função que receba dois argumentos: uma lista de números e um número. A função deve retornar todas as 
 # combinações de pares na lista que somem ao número dado.
 
-def combinations(lista: list, numero: int):
-    for l in lista:
-        print(l, numero, l + numero)
+# def combinations(lista: list, numero: int):
+#     for l in lista:
+#         print(l, numero, l + numero)
 
-lista = [11, 1, 5, 55, 34, 89]
-numero = 7
-print(combinations(lista, numero))
+# lista = [11, 1, 5, 55, 34, 89]
+# numero = 7
+# print(combinations(lista, numero))
 
-def combinations(lista: list, numero: int) -> list:
-    return [l + numero for l in lista]
+# def combinations(lista: list, numero: int) -> list:
+#     return [l + numero for l in lista]
 
-lista = [11, 1, 5, 55, 34, 89]
-numero = 7
-resultado = combinations(lista, numero)
+# lista = [11, 1, 5, 55, 34, 89]
+# numero = 7
+# resultado = combinations(lista, numero)
+# print(resultado)
+
+# 20 - Escreva uma função que receba um dicionário e retorne uma lista de chaves ordenadas
+
+# estoque = {"Teclado": 10, "Mouse": 0, "Monitor": 3, "CPU": 0}
+
+def chaves_ordenadas(dicionario: dict) -> list:
+    return sorted(dicionario.keys())
+
+dados = {"nome": "Matheus", "idade": 27, "cidade": "Curitiba"}
+resultado = chaves_ordenadas(dados)
 print(resultado)
 
-# Escreva uma função que receba um dicionário e retorne uma lista de chaves ordenadas
-# O padrão de nomeação de funções em Python segue convenções que são amplamente aceitas pela comunidade Python, 
-# conforme recomendado no PEP 8, o guia de estilo para a codificação em Python. Adotar esses padrões não só melhora a
-# legibilidade do código, mas também facilita a compreensão e a manutenção por outros desenvolvedores, incluindo aqueles novos ao projeto.
+dicionario = {"Aula": 12, "Aula": 1, "Aula": 55, "Aula": 22, "Aula": 108, "Aula": 5, "Aula": 43, "Aula": 99}
