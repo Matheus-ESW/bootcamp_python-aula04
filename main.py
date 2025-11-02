@@ -344,11 +344,75 @@
 
 # estoque = {"Teclado": 10, "Mouse": 0, "Monitor": 3, "CPU": 0}
 
-def chaves_ordenadas(dicionario: dict) -> list:
-    return sorted(dicionario.keys())
+# def chaves_ordenadas(dicionario: dict) -> list:
+#     return sorted(dicionario.keys())
 
-dados = {"nome": "Matheus", "idade": 27, "cidade": "Curitiba"}
-resultado = chaves_ordenadas(dados)
-print(resultado)
+# dados = {"nome": "Matheus", "idade": 27, "cidade": "Curitiba"}
+# resultado = chaves_ordenadas(dados)
+# print(resultado)
 
-dicionario = {"Aula": 12, "Aula": 1, "Aula": 55, "Aula": 22, "Aula": 108, "Aula": 5, "Aula": 43, "Aula": 99}
+# dicionario = {"Aula": 12, "Aula": 1, "Aula": 55, "Aula": 22, "Aula": 108, "Aula": 5, "Aula": 43, "Aula": 99}
+
+
+def validaNome(nome_valido: str) -> str:
+    # Loop para verificar o nome
+    while not nome_valido:
+        try:
+            nome = input("Digite seu nome: ")
+            if len(nome) == 0:
+                raise ValueError("O nome não pode estar vazio.")
+            elif any(char.isdigit() for char in nome):
+                raise ValueError("O nome não deve conter números.")
+            else:
+                print("Nome válido:", nome)
+                nome_valido = True
+        except ValueError as e:
+            print(e)
+    
+    return nome
+
+def validaSalario(salario_valido: float) -> float:
+    # Loop para verificar o salário
+    while not salario_valido:
+        try:
+            salario = float(input("Digite o valor do seu salário: "))
+            if salario < 0:
+                print("Por favor, digite um valor positivo para o salário.")
+            else:
+                salario_valido = True
+        except ValueError:
+            print("Entrada inválida para o salário. Por favor, digite um número.")
+    
+    return salario
+
+def validaBonus(bonus_valido: float) -> float:
+    # Loop para verificar o bônus
+    while not bonus_valido:
+        try:
+            bonus = float(input("Digite o valor do bônus recebido: "))
+            if bonus < 0:
+                print("Por favor, digite um valor positivo para o bônus.")
+            else:
+                bonus_valido = True
+        except ValueError:
+            print("Entrada inválida para o bônus. Por favor, digite um número.")
+
+    return bonus
+
+def calculaBonus(salario: float, bonus: float) -> float:
+    bonus_recebido = 1000 + salario * bonus  # Exemplo simples de cálculo de bônus
+
+    return bonus_recebido
+
+# Inicializa as variáveis para o controle do loop
+nome_valido: str = False
+nome_valido = validaNome(nome_valido)
+
+salario_valido: float = False
+salario_valido = validaSalario(salario_valido)
+
+bonus_valido: float = False
+bonus_valido = validaBonus(bonus_valido)
+
+# Imprime as informações para o usuário
+print(f"{nome_valido}, seu salário é R${salario_valido:.2f} e seu bônus final é R${bonus_valido:.2f}.")
