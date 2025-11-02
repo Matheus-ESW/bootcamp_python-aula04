@@ -183,13 +183,127 @@
 # 15. Contagem de Frequência de Itens
 # Objetivo: Dada uma string, contar a frequência de cada caractere usando um dicionário.
 
-texto = "engenharia de dados"
-frequencia = {}
+# texto = "engenharia de dados"
+# frequencia = {}
 
-for caractere in texto:
-    if caractere in frequencia:
-        frequencia[caractere] += 1
-    else:
-        frequencia[caractere] = 1
+# for caractere in texto:
+#     if caractere in frequencia:
+#         frequencia[caractere] += 1
+#     else:
+#         frequencia[caractere] = 1
 
-print(frequencia)
+# print(frequencia)
+
+# 3.Lendo arquivos
+# Para ler um arquivo CSV em Python utilizando o módulo nativo, você pode usar a combinação
+# do comando with open... para abrir o arquivo e o método .reader() do módulo csv para ler o
+# arquivo linha por linha. O uso de with assegura que o arquivo será fechado corretamente após
+# sua leitura, mesmo que ocorram erros durante o processo. Abaixo está um exemplo básico de
+# como realizar essa operação:
+
+# import csv
+
+# # Caminho para o arquivo CSV
+# caminho_arquivo = 'csv/uber-raw-data-sep14.csv'
+
+# # Inicializa uma lista vazia para armazenar os dados
+# dados = []
+
+# # Usa o gerenciador de contexto `with` para abrir o arquivo
+# with open(caminho_arquivo, mode='r', encoding='utf-8') as arquivo:
+#     # Cria um objeto leitor de CSV
+#     leitor_csv = csv.DictReader(arquivo)
+    
+#     # Itera sobre as linhas do arquivo CSV
+#     for linha in leitor_csv:
+#         # Adiciona cada linha (um dicionário) à lista de dados
+#         dados.append(linha)
+
+# # Exibe os dados lidos do arquivo CSV
+# cont = 1
+# for registro in dados:
+#     if cont < 100:
+#         print(registro)
+#     cont += 1
+
+# 4. Funções
+# Importância na Engenharia de Dados
+# Funções permitem modularizar e reutilizar código, essencial para processar e analisar 
+# grandes conjuntos de dados. Na engenharia de dados, funções são usadas para encapsular 
+# lógicas de transformação, limpeza, agregação e análise de dados, tornando o código mais 
+# organizado e mantendo a qualidade do código.
+
+# As funções em programação são abstrações poderosas que permitem encapsular blocos de 
+# código para realizar tarefas específicas. Elas servem não apenas para organizar o código
+# e torná-lo mais legível, mas também para abstrair complexidades, permitindo que os 
+# programadores pensem em problemas em um nível mais alto. Uma função bem projetada pode 
+# ser vista como um "mini-programa" dentro de um programa maior, com sua própria lógica e dados de entrada e saída.
+
+# Um exemplo clássico dessa abstração é a ordenação de uma lista. Vamos primeiro desenvolver 
+# uma função simples em Python que ordena uma lista usando o algoritmo de ordenação por seleção,
+# um método simples mas eficaz para listas pequenas e médias. Em seguida, mostraremos como essa 
+# tarefa pode ser realizada de forma mais direta usando o método sort() built-in do Python, que 
+# é uma abstração fornecida pela linguagem para realizar a mesma tarefa.
+
+# Função de Ordenação Personalizada
+
+# # Implementação do algoritmo de ordenação por seleção
+
+# lista = [64, 34, 25, 12, 22, 11, 90]
+
+# for i in range(len(lista)):
+#     for j in range(i+1, len(lista)):
+#         if lista[i] > lista[j]:
+#             lista[i], lista[j] = lista[j], lista[i]
+
+# # Ordenando a lista
+# print("Lista ordenada com função personalizada:", lista)
+
+# Usando o Método Built-in sort()
+# O Python fornece uma abstração poderosa através do método sort(), 
+# que pode ordenar listas in-place de maneira eficiente e com uma sintaxe simples.
+
+# Lista de exemplo
+# lista_exemplo = [64, 34, 25, 12, 22, 11, 90]
+
+# # Ordenando a lista com sort()
+# lista_exemplo.sort()
+
+# print("Lista ordenada com método built-in:", lista_exemplo)
+
+# Exemplo: Transformação de Dados com Funções
+# Suponhamos a necessidade de limpar e transformar nomes de usuários em um conjunto de dados.
+# Uma função dedicada pode ser implementada para essa tarefa.
+
+# def normalizar_nome(nome: str) -> str:
+#     return nome.strip().lower()
+
+# nomes = [" Alice ", "BOB", "Carlos"]
+# nomes_normalizados = [normalizar_nome(nome) for nome in nomes]
+# print(nomes_normalizados)
+
+# Exercícios de Funções
+# 16 - Escreva uma função que receba uma lista de números e retorne a soma de todos os números.
+
+def somaLista(numeros: int) -> int:
+    somaNumeros = 0
+    for numero in numeros:
+        somaNumeros += numero
+
+    return somaNumeros
+
+numeros = [5, 12, 6, 25, 55, 107]
+somaNumeros = somaLista(numeros)
+print(somaNumeros)
+# ------------------------------------
+numeros = [5, 12, 6, 25, 55, 107]
+print(sum(numeros))
+
+# Crie uma função que receba um número como argumento e retorne True se o número for primo e False caso contrário.
+# Desenvolva uma função que receba uma string como argumento e retorne essa string revertida.
+# Implemente uma função que receba dois argumentos: uma lista de números e um número. A função deve retornar todas as 
+# combinações de pares na lista que somem ao número dado.
+# Escreva uma função que receba um dicionário e retorne uma lista de chaves ordenadas
+# O padrão de nomeação de funções em Python segue convenções que são amplamente aceitas pela comunidade Python, 
+# conforme recomendado no PEP 8, o guia de estilo para a codificação em Python. Adotar esses padrões não só melhora a
+# legibilidade do código, mas também facilita a compreensão e a manutenção por outros desenvolvedores, incluindo aqueles novos ao projeto.
