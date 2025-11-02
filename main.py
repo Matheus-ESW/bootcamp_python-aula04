@@ -301,18 +301,26 @@
 
 # 17 - Crie uma função que receba um número como argumento e retorne True se o número for primo e False caso contrário.
 
-def primo(numero: int):
-    if numero < 2:
-        return False
-    for i in range(2, int(numero ** 0.5) + 1):
-        if numero % i == 0:
-            return False
-    return True
+# def primo(numero: int):
+#     if numero < 2:
+#         return False
+#     for i in range(2, int(numero ** 0.5) + 1):
+#         if numero % i == 0:
+#             return False
+#     return True
 
-numero = int(input("informe um número: "))
-print(primo(numero))
+# numero = int(input("informe um número: "))
+# print(primo(numero))
 
-# Desenvolva uma função que receba uma string como argumento e retorne essa string revertida.
+# 18 - Desenvolva uma função que receba uma string como argumento e retorne essa string revertida.
+
+def inverteString(palavra: str) -> str:
+    return palavra[::-1]
+
+palavra = str(input("Informe o texto: "))
+palavraInvertida = inverteString(palavra)
+print(palavraInvertida)
+
 # Implemente uma função que receba dois argumentos: uma lista de números e um número. A função deve retornar todas as 
 # combinações de pares na lista que somem ao número dado.
 # Escreva uma função que receba um dicionário e retorne uma lista de chaves ordenadas
