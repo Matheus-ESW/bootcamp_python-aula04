@@ -285,21 +285,33 @@
 # Exercícios de Funções
 # 16 - Escreva uma função que receba uma lista de números e retorne a soma de todos os números.
 
-def somaLista(numeros: int) -> int:
-    somaNumeros = 0
-    for numero in numeros:
-        somaNumeros += numero
+# def somaLista(numeros: int) -> int:
+#     somaNumeros = 0
+#     for numero in numeros:
+#         somaNumeros += numero
 
-    return somaNumeros
+#     return somaNumeros
 
-numeros = [5, 12, 6, 25, 55, 107]
-somaNumeros = somaLista(numeros)
-print(somaNumeros)
-# ------------------------------------
-numeros = [5, 12, 6, 25, 55, 107]
-print(sum(numeros))
+# numeros = [5, 12, 6, 25, 55, 107]
+# somaNumeros = somaLista(numeros)
+# print(somaNumeros)
+# # ------------------------------------
+# numeros = [5, 12, 6, 25, 55, 107]
+# print(sum(numeros))
 
-# Crie uma função que receba um número como argumento e retorne True se o número for primo e False caso contrário.
+# 17 - Crie uma função que receba um número como argumento e retorne True se o número for primo e False caso contrário.
+
+def primo(numero: int):
+    if numero < 2:
+        return False
+    for i in range(2, int(numero ** 0.5) + 1):
+        if numero % i == 0:
+            return False
+    return True
+
+numero = int(input("informe um número: "))
+print(primo(numero))
+
 # Desenvolva uma função que receba uma string como argumento e retorne essa string revertida.
 # Implemente uma função que receba dois argumentos: uma lista de números e um número. A função deve retornar todas as 
 # combinações de pares na lista que somem ao número dado.
