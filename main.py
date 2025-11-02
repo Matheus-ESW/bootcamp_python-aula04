@@ -314,15 +314,32 @@
 
 # 18 - Desenvolva uma função que receba uma string como argumento e retorne essa string revertida.
 
-def inverteString(palavra: str) -> str:
-    return palavra[::-1]
+# def inverteString(palavra: str) -> str:
+#     return palavra[::-1]
 
-palavra = str(input("Informe o texto: "))
-palavraInvertida = inverteString(palavra)
-print(palavraInvertida)
+# palavra = str(input("Informe o texto: "))
+# palavraInvertida = inverteString(palavra)
+# print(palavraInvertida)
 
-# Implemente uma função que receba dois argumentos: uma lista de números e um número. A função deve retornar todas as 
+# 18 - Implemente uma função que receba dois argumentos: uma lista de números e um número. A função deve retornar todas as 
 # combinações de pares na lista que somem ao número dado.
+
+def combinations(lista: list, numero: int):
+    for l in lista:
+        print(l, numero, l + numero)
+
+lista = [11, 1, 5, 55, 34, 89]
+numero = 7
+print(combinations(lista, numero))
+
+def combinations(lista: list, numero: int) -> list:
+    return [l + numero for l in lista]
+
+lista = [11, 1, 5, 55, 34, 89]
+numero = 7
+resultado = combinations(lista, numero)
+print(resultado)
+
 # Escreva uma função que receba um dicionário e retorne uma lista de chaves ordenadas
 # O padrão de nomeação de funções em Python segue convenções que são amplamente aceitas pela comunidade Python, 
 # conforme recomendado no PEP 8, o guia de estilo para a codificação em Python. Adotar esses padrões não só melhora a
